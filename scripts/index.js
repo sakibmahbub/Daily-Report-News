@@ -17,11 +17,11 @@ const fetchCategoryNews = async (category_id, category_name) => {
   const url = `https://openapi.programming-hero.com/api/news/category/${category_id}`;
   const res = await fetch(url);
   const data = await res.json();
-  showAllNews(data, category_name);
+  showAllNews(data.data, category_name);
 };
 
 const showAllNews = (data, category_name) => {
   console.log(data, category_name);
-  document.getElementById("category-count").innerText = data.data.length;
+  document.getElementById("category-count").innerText = data.length;
   document.getElementById("category-name").innerText = category_name;
 };
