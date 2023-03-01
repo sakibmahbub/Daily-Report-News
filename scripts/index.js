@@ -31,17 +31,27 @@ const showAllNews = (data, category_name) => {
     <div class="card mb-3">
         <div class="row g-0">
           <div class="col-md-4">
-            <img src="${news.image_url}" class="img-fluid rounded-start"/>
+            <img src="${news.image_url}" class="img-fluid rounded-start" />
           </div>
-          <div class="col-md-8">
+          <div class="col-md-8 d-flex flex-column">
             <div class="card-body">
               <h5 class="card-title">${news.title}</h5>
-              <p class="card-text">
-              ${news.details.slice(0, 200)}...
-              </p>
-              <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
+              <p class="card-text">${news.details.slice(0, 200)}...</p>
+            </div>
+            <div class="card-footer d-flex justify-content-between align-items-center border-0 bg-body">
+              <div class="d-flex align-items-center gap-3">
+                <img
+                  src="${news.author.img}"
+                  class="rounded-5"
+                  height="40"
+                  width="40"
+                />
+                <div>
+                  <p class="m-0 p-0">${news.author.name}</p>
+                  <p class="m-0 p-0">${news.author.published_date}</p>
+                </div>
+              </div>
+              
             </div>
           </div>
         </div>
